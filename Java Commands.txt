@@ -6,3 +6,20 @@ jstat -gccapacity [insert-pid-here] will present information about memory pool g
 
 jstat -gcutil [insert-pid-here] will present the utilization of each generation as a percentage of its capacity. Useful to get an at a glance view of usage.
 
+# Thread Dump Java Process
+
+To get a thread dump of a Java process, follow these steps:
+Identify the process ID (PID) of the Java process using the following command:
+
+$ jps
+This command will list all the Java processes running on the system along with their process IDs.
+
+Once you have identified the PID of the Java process, use the following command to generate a thread dump:
+
+$ jstack <pid> > <filename>.txt
+Replace <pid> with the process ID of the Java process and <filename> with the name of the file you want to save the thread dump in. For example:
+
+$ jstack 1234 > thread-dump.txt
+The above command will create a thread dump in the specified file. Open the file in a text editor to view the thread dump.
+
+Alternatively, you can also use tools like jvisualvm, jconsole, or Java Mission Control to generate and view thread dumps of a Java process.
